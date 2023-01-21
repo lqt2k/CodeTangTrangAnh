@@ -14,6 +14,17 @@ function init() {
   //document.querySelector('#card .end-card').innerHTML = `${EndCardText}`;
   document.querySelector('#card .honey').setAttribute('src', `${giftImage}`);
 
+  let data = {
+    'entry.1639122318': 'Yes'
+  }
+let queryString = new URLSearchParams(data);
+queryString = queryString.toString();
+console.log(queryString);
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSezz1hzX1eNFuEaTfKUiFm9LIGI4knPRsIc5jpzUy4jF66kTw/formResponse', true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send(queryString);
+
   setTimeout(() => alert(' Thích tui thì ấn OK để xem tiếp nha :))))\n Không thích mà xem => Thích á nha :))) '), 1200);
   setTimeout(() => alert(' Đã thích rồi thì làm người iu của tui đi chứ :))))\n Đồng ý thì ấn OK để xem tiếp nà :))) '), 1200);
   
